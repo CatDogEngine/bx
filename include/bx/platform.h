@@ -73,6 +73,9 @@
 #		undef  BX_COMPILER_CLANG_ANALYZER
 #		define BX_COMPILER_CLANG_ANALYZER 1
 #	endif // defined(__clang_analyzer__)
+#	if defined(_WIN32) || defined(_WIN64)
+#	define BX_WINDOWS_CLANG 1
+#	endif // defined(_WIN32) || defined(_WIN64)
 #elif defined(_MSC_VER)
 #	undef  BX_COMPILER_MSVC
 #	define BX_COMPILER_MSVC _MSC_VER
