@@ -1237,26 +1237,26 @@ namespace bx
 		return total;
 	}
 
-	int32_t vprintf(const char* _format, va_list _argList)
-	{
-		Error err;
-		va_list argListCopy;
-		va_copy(argListCopy, _argList);
-		int32_t total = write(getStdOut(), _format, argListCopy, &err);
-		va_end(argListCopy);
+	//int32_t vprintf(const char* _format, va_list _argList)
+	//{
+	//	Error err;
+	//	va_list argListCopy;
+	//	va_copy(argListCopy, _argList);
+	//	int32_t total = write(getStdOut(), _format, argListCopy, &err);
+	//	va_end(argListCopy);
+	//
+	//	return total;
+	//}
 
-		return total;
-	}
-
-	int32_t printf(const char* _format, ...)
-	{
-		va_list argList;
-		va_start(argList, _format);
-		int32_t total = vprintf(_format, argList);
-		va_end(argList);
-
-		return total;
-	}
+	//int32_t printf(const char* _format, ...)
+	//{
+	//	va_list argList;
+	//	va_start(argList, _format);
+	//	int32_t total = vprintf(_format, argList);
+	//	va_end(argList);
+	//
+	//	return total;
+	//}
 
 	static const char s_units[] = { 'B', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y' };
 

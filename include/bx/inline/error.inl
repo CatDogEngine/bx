@@ -83,10 +83,10 @@ namespace bx
 	{
 		if (!isOk() )
 		{
-			printf("Error: 0x%08x `%S`"
-				, get().code
-				, &getMessage()
-				);
+			//printf("Error: 0x%08x `%S`"
+			//	, get().code
+			//	, &getMessage()
+			//	);
 
 			exit(kExitFailure);
 		}

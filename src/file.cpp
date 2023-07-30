@@ -236,23 +236,23 @@ namespace bx
 		bool  m_open;
 	};
 
-	ReaderI* getStdIn()
-	{
-		static FileReaderImpl s_stdIn(stdout);
-		return &s_stdIn;
-	}
-
-	WriterI* getStdOut()
-	{
-		static FileWriterImpl s_stdOut(stdout);
-		return &s_stdOut;
-	}
-
-	WriterI* getStdErr()
-	{
-		static FileWriterImpl s_stdOut(stderr);
-		return &s_stdOut;
-	}
+	//ReaderI* getStdIn()
+	//{
+	//	static FileReaderImpl s_stdIn(stdout);
+	//	return &s_stdIn;
+	//}
+	//
+	//WriterI* getStdOut()
+	//{
+	//	static FileWriterImpl s_stdOut(stdout);
+	//	return &s_stdOut;
+	//}
+	//
+	//WriterI* getStdErr()
+	//{
+	//	static FileWriterImpl s_stdOut(stderr);
+	//	return &s_stdOut;
+	//}
 
 #elif BX_CRT_NONE
 	class FileReaderImpl : public FileReaderI
@@ -408,23 +408,23 @@ namespace bx
 		bool    m_open;
 	};
 
-	ReaderI* getStdIn()
-	{
-		static FileReaderImpl s_stdIn( (void*)intptr_t(crt0::Io::In) );
-		return &s_stdIn;
-	}
-
-	WriterI* getStdOut()
-	{
-		static FileWriterImpl s_stdOut( (void*)intptr_t(crt0::Io::Out) );
-		return &s_stdOut;
-	}
-
-	WriterI* getStdErr()
-	{
-		static FileWriterImpl s_stdOut( (void*)intptr_t(crt0::Io::Err) );
-		return &s_stdOut;
-	}
+	//ReaderI* getStdIn()
+	//{
+	//	static FileReaderImpl s_stdIn( (void*)intptr_t(crt0::Io::In) );
+	//	return &s_stdIn;
+	//}
+	//
+	//WriterI* getStdOut()
+	//{
+	//	static FileWriterImpl s_stdOut( (void*)intptr_t(crt0::Io::Out) );
+	//	return &s_stdOut;
+	//}
+	//
+	//WriterI* getStdErr()
+	//{
+	//	static FileWriterImpl s_stdOut( (void*)intptr_t(crt0::Io::Err) );
+	//	return &s_stdOut;
+	//}
 
 #else
 

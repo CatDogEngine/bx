@@ -12,13 +12,13 @@
 namespace bx
 {
 	/// Returns standard input reader.
-	ReaderI* getStdIn();
+	//ReaderI* getStdIn();
 
 	/// Returns standard output writer.
-	WriterI* getStdOut();
+	//WriterI* getStdOut();
 
 	/// Returns standard error writer.
-	WriterI* getStdErr();
+	//WriterI* getStdErr();
 
 	/// Returns null output writer.
 	WriterI* getNullOut();
