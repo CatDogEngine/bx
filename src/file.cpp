@@ -48,6 +48,10 @@ namespace bx
 			return false;
 		}
 
+		virtual void flush() override
+		{
+		}
+
 		virtual void close() override
 		{
 		}
@@ -197,6 +201,15 @@ namespace bx
 
 			m_open = true;
 			return true;
+		}
+
+		virtual void flush() override
+		{
+			if (m_open
+			&& NULL != m_file)
+			{
+				fflush(m_file);
+			}
 		}
 
 		virtual void close() override
@@ -372,6 +385,15 @@ namespace bx
 			return true;
 		}
 
+		virtual void flush() override
+		{
+			if (m_open
+				&& 0 != m_fd)
+			{
+				crt0::flush(m_fd);
+			}
+		}
+
 		virtual void close() override
 		{
 			if (m_open
@@ -543,6 +565,12 @@ namespace bx
 	{
 		FileWriterImpl* impl = reinterpret_cast<FileWriterImpl*>(m_internal);
 		return impl->open(_filePath, _append, _err);
+	}
+
+	void FileWriter::flush()
+	{
+		FileWriterImpl* impl = reinterpret_cast<FileWriterImpl*>(m_internal);
+		impl->flush();
 	}
 
 	void FileWriter::close()
